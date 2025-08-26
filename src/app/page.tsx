@@ -18,10 +18,19 @@ export default function Home() {
     useState<Association | null>(null);
 
   const filteredAssociations = useMemo(() => {
+    const lowerCaseQuery = searchQuery.toLowerCase();
     return associations.filter((asso) => {
       const matchesSearch =
-        asso.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        asso.description.toLowerCase().includes(searchQuery.toLowerCase());
+        asso.name.toLowerCase().includes(lowerCaseQuery) ||
+        asso.description.toLowerCase().includes(lowerCaseQuery) ||
+        (asso.activities &&
+          asso.activities.some(activity =>
+            activity.items.some(item =>
+              item.name.toLowerCase().includes(lowerCaseQuery) ||
+              item.details.toLowerCase().includes(lowerCaseQuery)
+            )
+          ));
+
       const matchesCategory =
         selectedCategories.length === 0 ||
         selectedCategories.some((cat) => asso.categories.includes(cat));
