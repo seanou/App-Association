@@ -25,7 +25,7 @@ export default function AssociationCard({
     <Card
       onClick={onSelect}
       className={cn(
-        "flex flex-col cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+        "flex flex-col cursor-pointer hover:shadow-lg transition-all duration-300 rounded-2xl hover:-translate-y-2 hover:rotate-[-3deg]"
       )}
     >
       <CardHeader>
