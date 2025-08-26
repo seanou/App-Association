@@ -23,11 +23,12 @@ export interface Association {
   id: string;
   name: string;
   description: string;
+  icon: string;
   categories: string[];
   schedule?: string;
   contacts?: Contact[];
   location?: string;
-  website?: string;
+website?: string;
   fee?: string;
   events?: AssociationEvent[];
   activities?: Activity[];
