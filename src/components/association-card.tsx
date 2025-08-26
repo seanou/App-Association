@@ -1,3 +1,4 @@
+
 import type { Association } from "@/lib/types";
 import {
   Card,
@@ -14,20 +15,17 @@ import { ArrowRight } from "lucide-react";
 type AssociationCardProps = {
   association: Association;
   onSelect: () => void;
-  isRecommended: boolean;
 };
 
 export default function AssociationCard({
   association,
   onSelect,
-  isRecommended,
 }: AssociationCardProps) {
   return (
     <Card
       onClick={onSelect}
       className={cn(
-        "flex flex-col cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300",
-        isRecommended && "ring-2 ring-accent ring-offset-2 ring-offset-background"
+        "flex flex-col cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
       )}
     >
       <CardHeader>

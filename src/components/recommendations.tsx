@@ -1,4 +1,9 @@
+
 "use client";
+
+// This component is no longer used in the application.
+// We are keeping the file to avoid breaking potential imports,
+// but in a real-world scenario, you would delete this file.
 
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
@@ -56,7 +61,7 @@ export default function RecommendationEngine({ onRecommendations }: Recommendati
   };
 
   return (
-    <Card className="bg-card/80 backdrop-blur-sm">
+     <Card className="bg-card/80 backdrop-blur-sm hidden">
       <CardHeader>
         <div className="flex items-center gap-3">
             <div className="p-2 bg-accent/20 text-accent-foreground rounded-lg">

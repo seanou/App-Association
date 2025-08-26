@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from "react";
@@ -7,7 +8,6 @@ import Header from "@/components/layout/header";
 import AssociationCard from "@/components/association-card";
 import AssociationDialog from "@/components/association-dialog";
 import Filters from "@/components/filters";
-import RecommendationEngine from "@/components/recommendations";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -16,7 +16,6 @@ export default function Home() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedAssociation, setSelectedAssociation] =
     useState<Association | null>(null);
-  const [recommended, setRecommended] = useState<string[]>([]);
 
   const filteredAssociations = useMemo(() => {
     return associations.filter((asso) => {
@@ -43,8 +42,6 @@ export default function Home() {
       <Header />
       <main className="flex-1 overflow-hidden">
         <div className="container mx-auto px-4 py-8 h-full flex flex-col">
-          <RecommendationEngine onRecommendations={setRecommended} />
-
           <div className="mt-8">
             <h2 className="text-2xl font-bold text-foreground mb-4 font-headline">
               Annuaire des Associations
@@ -71,7 +68,6 @@ export default function Home() {
                   key={asso.id}
                   association={asso}
                   onSelect={() => setSelectedAssociation(asso)}
-                  isRecommended={recommended.includes(asso.name)}
                 />
               ))}
             </div>
