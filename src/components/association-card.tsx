@@ -35,7 +35,7 @@ export default function AssociationCard({
       <CardContent className="flex-1">
         <div className="flex flex-wrap gap-2">
           {association.categories.map((cat) => (
-            <Badge key={cat} variant="secondary" className="bg-white/10 text-secondary-foreground">
+            <Badge key={cat} variant="secondary">
               {cat}
             </Badge>
           ))}
