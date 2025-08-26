@@ -25,17 +25,17 @@ export default function AssociationCard({
     <Card
       onClick={onSelect}
       className={cn(
-        "flex flex-col cursor-pointer hover:shadow-lg transition-all duration-300 rounded-2xl hover:-translate-y-2 hover:rotate-[-3deg]"
+        "flex flex-col cursor-pointer hover:shadow-xl transition-all duration-300 rounded-2xl hover:-translate-y-2 hover:rotate-[-6deg] border-2 border-transparent hover:border-primary"
       )}
     >
       <CardHeader>
-        <CardTitle className="font-headline text-lg">{association.name}</CardTitle>
+        <CardTitle className="font-headline text-lg font-bold">{association.name}</CardTitle>
         <CardDescription className="line-clamp-3 h-[60px]">{association.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-1">
         <div className="flex flex-wrap gap-2">
           {association.categories.map((cat) => (
-            <Badge key={cat} variant="secondary">
+            <Badge key={cat} variant="secondary" className="bg-white/10 text-secondary-foreground">
               {cat}
             </Badge>
           ))}
